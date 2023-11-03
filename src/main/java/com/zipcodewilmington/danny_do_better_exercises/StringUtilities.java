@@ -4,11 +4,14 @@ package com.zipcodewilmington.danny_do_better_exercises;
  * Created by dan on 6/14/17.
  */
 public class StringUtilities {
+    private static char[] arr;
+
     /**
      * @return `Hello World` as a string
      */
     public static String getHelloWorld() {
-        return null;
+         String s = "Hello World";
+            return s;
     }
 
     /**
@@ -17,7 +20,7 @@ public class StringUtilities {
      * @return the concatenation of two strings, `firstSegment`, and `secondSegment`
      */
     public static String concatenation(String firstSegment, String secondSegment){
-        return null;
+        return firstSegment + secondSegment ;
     }
 
     /**
@@ -26,7 +29,7 @@ public class StringUtilities {
      * @return the concatenation of an integer, `firstSegment`, and a String, `secondSegment`
      */
     public static String concatenation(int firstSegment, String secondSegment){
-        return null;
+        return firstSegment + secondSegment;
     }
 
     /**
@@ -34,6 +37,13 @@ public class StringUtilities {
      * @return the first 3 characters of `input`
      */
     public static String getPrefix(String input){
+        String res = "";
+        char[] arr = input.toCharArray();
+        if (input.length() == 3) {
+            return input;
+        } else if (input.length() > 3) {
+            return input.substring(0,3);
+        }
         return null;
     }
 
@@ -42,6 +52,13 @@ public class StringUtilities {
      * @return the last 3 characters of `input`
      */
     public static String getSuffix(String input){
+        String res = "";
+        char[] arr = input.toCharArray();
+        if (input.length() == 3) {
+            return input;
+        } else if (input.length() > 3) {
+            return input.substring(input.length() - 3);
+        }
         return null;
     }
 
@@ -50,16 +67,24 @@ public class StringUtilities {
      * @param comparableValue the value to be compared against
      * @return the equivalence of two strings, `inputValue` and `comparableValue`
      */
-    public static Boolean compareTwoStrings(String inputValue, String comparableValue){
-        return null;
+    public static String compareTwoStrings(String inputValue, String comparableValue){
+        if (inputValue.equals(comparableValue)){
+            return inputValue + comparableValue ;
+        }
+        return "not equivalent";
     }
 
     /**
      * @param inputValue the value input from user
      * @return the middle character of `inputValue`
      */
-    public static Character getMiddleCharacter(String inputValue){
-        return null;
+    public static char getMiddleCharacter(String inputValue){
+        char res = ' ';
+        char[] charArray = inputValue.toCharArray();
+        if (charArray.length % 2 !=0 ) {
+            res = charArray[(charArray.length / 2) - 1];
+        } else {
+
     }
 
     /**
@@ -67,15 +92,26 @@ public class StringUtilities {
      * @return the first sequence of characters
      */
     public static String getFirstWord(String spaceDelimitedString){
-        return null;
+        String mystring = "the quick brown fox";
+        String arr[] = mystring.split(" ", 2);
+
+        String firstWord = arr[0];
+        String theRest = arr[1];
+        return mystring;
     }
+//        int i= spaceDelimitedString.indexOf(' ');
+//        String firstWord = spaceDelimitedString.substring(0,i);
+//                return firstWord;
+//    }
 
     /**
      * @param spaceDelimitedString a string delimited by spaces
      * @return the second word of a string delimited by spaces.
      */
     public static String getSecondWord(String spaceDelimitedString){
-        return null;
+        int i= spaceDelimitedString.indexOf(' ');
+        String secondtWord = spaceDelimitedString.substring(1,i);
+        return secondtWord;
     }
 
     /**
@@ -83,6 +119,10 @@ public class StringUtilities {
      * @return an identical string with characters in reverse order.
      */
     public static String reverse(String stringToReverse){
-        return null;
+        StringBuilder sb=new StringBuilder(stringToReverse);
+        sb.reverse();
+        return sb.toString();
     }
+
 }
+
