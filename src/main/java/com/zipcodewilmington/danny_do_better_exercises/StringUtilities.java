@@ -29,6 +29,7 @@ public class StringUtilities {
      * @return the concatenation of an integer, `firstSegment`, and a String, `secondSegment`
      */
     public static String concatenation(int firstSegment, String secondSegment){
+
         return firstSegment + secondSegment;
     }
 
@@ -37,14 +38,13 @@ public class StringUtilities {
      * @return the first 3 characters of `input`
      */
     public static String getPrefix(String input){
-        String res = "";
-        char[] arr = input.toCharArray();
+        //char[] arr = input.toCharArray();
         if (input.length() == 3) {
             return input;
-        } else if (input.length() > 3) {
+        } else {
             return input.substring(0,3);
         }
-        return null;
+
     }
 
     /**
@@ -78,40 +78,36 @@ public class StringUtilities {
      * @param inputValue the value input from user
      * @return the middle character of `inputValue`
      */
-    public static char getMiddleCharacter(String inputValue){
+    public static char getMiddleCharacter(String inputValue) {
         char res = ' ';
         char[] charArray = inputValue.toCharArray();
-        if (charArray.length % 2 !=0 ) {
+        if (charArray.length % 2 == 0) {
             res = charArray[(charArray.length / 2) - 1];
         } else {
-
+            res = charArray[(charArray.length / 2)];
+        }
+        return res;
     }
-
     /**
      * @param spaceDelimitedString a string, representative of a sentence, containing spaces
      * @return the first sequence of characters
      */
     public static String getFirstWord(String spaceDelimitedString){
-        String mystring = "the quick brown fox";
-        String arr[] = mystring.split(" ", 2);
 
-        String firstWord = arr[0];
-        String theRest = arr[1];
-        return mystring;
+            String[] arr = spaceDelimitedString.split(" ");
+            String firstWord = arr[0];
+            return firstWord;
+
     }
-//        int i= spaceDelimitedString.indexOf(' ');
-//        String firstWord = spaceDelimitedString.substring(0,i);
-//                return firstWord;
-//    }
 
     /**
      * @param spaceDelimitedString a string delimited by spaces
      * @return the second word of a string delimited by spaces.
      */
     public static String getSecondWord(String spaceDelimitedString){
-        int i= spaceDelimitedString.indexOf(' ');
-        String secondtWord = spaceDelimitedString.substring(1,i);
-        return secondtWord;
+        String[] arr = spaceDelimitedString.split(" ");
+        String secondWord = arr[1];
+        return secondWord;
     }
 
     /**
